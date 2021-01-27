@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import PdfForm from '../views/PdfTEST.vue'
+import PdfHtml from '../views/PdfTEST.vue'
 
 Vue.use(VueRouter)
 
@@ -11,12 +13,28 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/PdfTEST',
+    name: 'Form',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/PdfTEST.vue')
+  },
+  {
+    path: '/PdfHtmlTEST1',
+    name: 'HTML 1',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/PdfHtmlTEST1.vue')
+  },
+  {
+    path: '/PdfHtmlTEST2',
+    name: 'HTML 2',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/PdfHtmlTEST2.vue')
   }
 ]
 
