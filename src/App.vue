@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/PdfTEST">Form</router-link> |
-      <router-link to="/PdfHtmlTEST1">HTML 1</router-link> |
-      <router-link to="/PdfHtmlTEST2">HTML 2</router-link>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="nav" class="mx-auto">
+      <router-link class="mx-3" to="/">Home</router-link> 
+      <router-link class="mx-3" to="/PdfTEST">Form</router-link>  
+      <router-link class="mx-3" to="/PdfHtmlTEST1">HTML 1</router-link> 
+      <router-link class="mx-3" to="/PdfHtmlTEST2">HTML 2</router-link> 
+      <router-link class="mx-3" to="/PdfTable">Table</router-link>
     </div>
-    <router-view/>
+    </nav>
+    <div class="my-5">
+      <router-view/>
+    </div>
   </div>
 </template>
 

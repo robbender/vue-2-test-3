@@ -2,11 +2,11 @@
   <b-container>
     <b-row>
       <b-col>
-        <h2>This will generate a PDF Preview from an HTML page.</h2>
+        <h2>This will generate a Table on a PDF.</h2>
           <title>display/box/float/clear test</title>
           <div>
             <b-button-group class="mb-5">
-              <b-button variant="success" @click="previewPdf">Preview</b-button>
+              <!-- <b-button variant="success" @click="previewPdf">Preview</b-button> -->
               <b-button variant="info" @click="genTable">Make Table</b-button>
               <b-button variant="warning" @click="clearPdf">Close</b-button>
             </b-button-group>
@@ -15,7 +15,33 @@
     </b-row>
     <b-row class="mt-5">
       <b-col>
-
+        <div>
+            <b-card class="text-center ">
+                <div class="bg-dark text-light p-3">
+                    This is javascript used to generate this PDF Table content. <br>
+                    <div class="text-left m-3">
+                    <samp>genTable(){  <br>
+                    <div class="ml-3">
+                    const pdf = new jspdf(); <br>
+                    let header = ["id","name"]; <br>
+                    let headerConfig = header.map(key=>({ 'name': key, <br>
+                    'prompt': key, <br>
+                    'width':50, <br>
+                    'align':'center', <br>
+                    'padding':0})); <br>
+                    let data = [{id: 1, name: "Peter"},{id: 2, name: "Chris"}]; <br>
+                    pdf.table(20, 30, data, headerConfig); <br>
+                    </div>
+                            <!-- pdf.save("table.pdf");<br>
+                        }&lt;b-card-body&gt;</samp> block of the
+                        <samp>&lt;b-card&gt;</samp> component. Notice the padding between the card's border and this
+                        gray <samp>&lt;div&gt; -->
+                    </samp>
+                    </div>
+                </div>
+            </b-card>
+            
+        </div>
       </b-col>
     </b-row>
   </b-container>
@@ -24,7 +50,7 @@
 <script>
 import jspdf from "jspdf";
 export default {
-  name: "PdfHtmlTest",
+  name: "PdfTable",
   props: {},
   data: () => {
     return {
@@ -68,7 +94,7 @@ export default {
       'padding':0}));
       let data = [{id: 1, name: "Peter"},{id: 2, name: "Chris"}];
       pdf.table(20, 30, data, headerConfig);
-      pdf.save("pdf.pdf");
+      pdf.save("table.pdf");
     }
     
     // onLoad() {

@@ -13,7 +13,10 @@
           >Generating your PDF, please wait...</b-alert>
       <div id="app">
         <!-- <h5>Please fill out all fields</h5> -->
-        <b-button variant='success' @click="makePdf">Download</b-button>
+        <b-button-group>
+          <b-button variant="success" @click="makePdf">Download PDF</b-button>
+          <b-button variant="warning" @click="clearPdf">Clear</b-button>
+        </b-button-group>
       </div>
       <br>
       <br>
@@ -138,16 +141,29 @@ export default {
       // const sourceItem = window.document.getElementsById("print")[0];
       
       // doc.fromHTML(contentHtml,15,15, {'width': 180,'elementHandlers': elementHandler});
+      doc.setFontSize(15);
+      doc.setTextColor(105,105,105);
+      doc.setFont("Arial");
       doc.text(this.name +"'s PDF" , 15, 10);
+      doc.setFontSize(12);
+      doc.setFont("Garamond");
       doc.text('Name: ' + this.name, 15,25);
+      doc.setFontSize(12);
       doc.text('Address: ' + this.address, 15,35);
       doc.text('Description: ' + this.description, 15,45);
       doc.text('Do you like pistachio ice cream?: ' + this.selected, 15,55);
       doc.text('Favorite Food: ' + this.selectedOpt, 15,65);
       // doc.fromHTML(contentHtml, 15, 15,);
+      doc.setFontSize(8);
+      // doc.setFontType("italic");
       doc.text(this.disclaimer, 15, 85);
+      doc.addPage();
       doc.save(this.name +'.pdf');
-      this.clearForm();
+      // , sizes = [12, 16, 20]
+      // , fonts = [['Times','Roman'],['Helvetica',''], ['Times','Italic']]
+      // , font, size, lines
+      // , verticalOffset = 0.5 // inches on a 8.5 x 11 inch sheet.
+      this.clearPdf();
     },
     countDownChanged(dismissCountDown) {
       this.dismissCountDown = dismissCountDown
@@ -156,6 +172,11 @@ export default {
         // console.log('Show Alert');
         this.dismissCountDown = this.dismissSecs
     },
+    clearPdf() {
+      console.log("Clearing Preview");
+      location.reload();
+      // this.iframe.src===null;
+    }
     
   },
 }
