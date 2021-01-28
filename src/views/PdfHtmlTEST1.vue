@@ -8,6 +8,7 @@
           <div>
             <b-button-group>
               <b-button variant="success" @click="previewPdf">Preview</b-button>
+              <!-- <b-button variant="primary" @click="previewPdf2">New Preview</b-button> -->
               <b-button variant="warning" @click="clearPdf">Clear</b-button>
             </b-button-group>
           </div>
@@ -55,7 +56,9 @@ export default {
   computed: {},
   methods: {
     previewPdf() {
-      let pdf = new jspdf("p", "pt", "letter");
+      let pdf = new jspdf("p", "pt", "a4");
+      // let width = doc.internal.pageSize.getWidth();
+      // let height = doc.internal.pageSize.getHeight();
       pdf.html(document.body, {
         callback: function (pdf) {
           var iframe = document.createElement("iframe");
@@ -72,137 +75,25 @@ export default {
         console.log("Clearing Preview");
         location.reload();
         // this.iframe.src===null;
-    }
+    },
+    // previewPdf2() {
+    //   //  PDFObject.embed(createPDF(), "#example1");
+        
+    //       let doc = new jspdf();
+
+    //       doc.setFont("helvetica");
+    //       // doc.setFontStyle("bold");
+                      
+    //       doc.setFontSize(20);
+    //       doc.text('TEST PDF...', 105, 20, 'center');
+
+    //       return doc.output('datauristring');    
+    // },
+
   },
 };
 </script>
 
 <style scoped>
-/* last modified: 1 Dec 98 */
-html {
-  font: 10px/1 Verdana, sans-serif;
-  background-color: blue;
-  color: white;
-}
 
-body {
-  margin: 1.5em;
-  border: 0.5em solid black;
-  padding: 0;
-  width: 48em;
-  background-color: white;
-}
-p {
-    color: black;
-    font-size: 1em;
-    line-height: 1.3em;
-    clear: both;
-}
-
-dl {
-  margin: 0;
-  border: 0;
-  padding: 0.5em;
-}
-
-dt {
-  background-color: rgb(204, 0, 0);
-  margin: 0;
-  padding: 1em;
-  width: 10.638%;
-  /* refers to parent element's width of 47em. = 5em or 50px */
-  height: 28em;
-  border: 0.5em solid black;
-  float: left;
-}
-
-dd {
-  float: right;
-  margin: 0 0 0 1em;
-  border: 1em solid black;
-  padding: 1em;
-  width: 34em;
-  height: 27em;
-}
-
-ul {
-  margin: 0;
-  border: 0;
-  padding: 0;
-}
-
-li {
-  display: block;
-  /* i.e., suppress marker */
-  color: black;
-  height: 9em;
-  width: 5em;
-  margin: 0;
-  border: 0.5em solid black;
-  padding: 1em;
-  float: left;
-  background-color: #fc0;
-}
-
-#bar {
-  background-color: black;
-  color: white;
-  width: 41.17%;
-  /* = 14em */
-  border: 0;
-  margin: 0 1em;
-}
-
-#baz {
-  margin: 1em 0;
-  border: 0;
-  padding: 1em;
-  width: 10em;
-  height: 10em;
-  background-color: black;
-  color: white;
-}
-
-form {
-  margin: 0;
-  display: inline;
-}
-
-p {
-  margin: 0;
-}
-
-form p {
-  line-height: 1.9;
-}
-
-blockquote {
-  margin: 1em 1em 1em 2em;
-  border-width: 1em 1.5em 2em 0.5em;
-  border-style: solid;
-  border-color: black;
-  padding: 1em 0;
-  width: 5em;
-  height: 9em;
-  float: left;
-  background-color: #fc0;
-  color: black;
-}
-
-address {
-  font-style: normal;
-}
-
-h1 {
-  background-color: black;
-  color: white;
-  float: left;
-  margin: 1em 0;
-  border: 0;
-  padding: 1em;
-  width: 10em;
-  height: 10em;
-  font-weight: normal;
-  font-size: 1em;
-}
 </style>

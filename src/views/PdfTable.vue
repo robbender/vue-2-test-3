@@ -1,14 +1,23 @@
 <template>
   <b-container>
+      <div>
+           <h2>This will generate a Table on a PDF.</h2>
+      </div>
     <b-row>
       <b-col>
-        <h2>This will generate a Table on a PDF.</h2>
-          <title>display/box/float/clear test</title>
+        <b-alert 
+          :show="dismissCountDown"
+          dismissible
+          variant="info"
+          @dismissed="dismissCountDown=0"
+          @dismiss-count-down="countDownChanged"
+          >Generating your PDF, please wait...</b-alert>
+       
           <div>
             <b-button-group class="mb-5">
               <!-- <b-button variant="success" @click="previewPdf">Preview</b-button> -->
-              <b-button variant="info" @click="genTable">Make Table</b-button>
-              <b-button variant="warning" @click="clearPdf">Close</b-button>
+              <b-button variant="info" @click="genTable">Download</b-button>
+              <!-- <b-button variant="warning" @click="clearPdf">Close</b-button> -->
             </b-button-group>
           </div>
       </b-col>
@@ -40,6 +49,11 @@
                     </div>
                 </div>
             </b-card>
+            <!-- <b-card img-src="src/assets/Screen Shot 2021-01-27 at 4.12.27 PM.png" img-alt="Card image" img-right> -->
+            <!-- <b-card "require('../assets/Screen Shot 2021-01-27 at 4.12.27 PM.png')" img-alt="Card image" img-bottom>
+                    Some quick example text to build on the card and make up the bulk of the card's content.
+                </b-card-text>
+            </b-card> -->
             
         </div>
       </b-col>
@@ -54,6 +68,8 @@ export default {
   props: {},
   data: () => {
     return {
+        dismissSecs: 5,
+        dismissCountDown: 0,
 
     };
   },
@@ -85,6 +101,7 @@ export default {
         // this.iframe.src===null;
     },
     genTable(){
+      this.showAlert();
       const pdf = new jspdf();
       let header = ["id","name"];
       let headerConfig = header.map(key=>({ 'name': key,
@@ -95,7 +112,11 @@ export default {
       let data = [{id: 1, name: "Peter"},{id: 2, name: "Chris"}];
       pdf.table(20, 30, data, headerConfig);
       pdf.save("table.pdf");
-    }
+    },
+    showAlert() {
+        // console.log('Show Alert');
+        this.dismissCountDown = this.dismissSecs
+    },
     
     // onLoad() {
     // var pdf = new jspdf('p', 'pt', 'letter');
