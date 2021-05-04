@@ -16,8 +16,8 @@
     "pdfjs-dist": "^2.6.347",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.2",
-    "vuedraggable": "^2.24.3",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
