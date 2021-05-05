@@ -7,6 +7,7 @@
       <router-link class="mx-3" to="/PdfHtmlTEST1">HTML 1</router-link> 
       <router-link class="mx-3" to="/PdfHtmlTEST2">HTML 2</router-link> 
       <router-link class="mx-3" to="/PdfTable">Table</router-link>
+      <router-link class="mx-3" to="/Counter">Counter</router-link>
     </div>
     </nav>
     <div class="my-5">
