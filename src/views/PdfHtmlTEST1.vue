@@ -51,7 +51,9 @@ export default {
   name: "PdfHtmlTest",
   props: {},
   data: () => {
-    return {};
+    return {
+       showItem: false,
+    };
   },
   computed: {},
   methods: {
@@ -76,6 +78,10 @@ export default {
         location.reload();
         // this.iframe.src===null;
     },
+    toggle() {
+        console.log('toggled');
+        this.showItem=!this.showItem;
+        }
     // previewPdf2() {
     //   //  PDFObject.embed(createPDF(), "#example1");
         
@@ -95,5 +101,5 @@ export default {
 </script>
 
 <style scoped>
-
+  
 </style>

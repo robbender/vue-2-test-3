@@ -14,7 +14,7 @@
           <div>
             <b-button-group class="mb-5">
               <b-button variant="success" @click="previewPdf">Preview</b-button>
-              <b-button variant="info" @click="makePdf">Download</b-button>
+              <b-button variant="info" @click="makePdf">Formatting Test</b-button>
               <b-button variant="warning" @click="clearPdf">Close</b-button>
             </b-button-group>
           </div>
@@ -22,83 +22,25 @@
     </b-row>
     <b-row class="mt-5">
       <b-col>
-        <div id="container" >
-            <div id="topbar" class="slide"><a id="menu-button">Scroll!</a>
-            Scroll button does not work on android4, though interestingly it works on Android 2 even though finger scrolling does not work</div>
-            <div id="wrapper" class="slide">
-              <ul class="text-left my-5">
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Content</li>
-                <li>Prashanth</li>
-              </ul>
-            </div>
+        <!-- <div id="html" class='position: absolute; left: 0; top: 0; bottom: 0; overflow: auto; width: 400px'> -->
+          <div id="app">
+          <b-container>
+            <b-jumbotron header="BootstrapVue" lead="Bootstrap v4 Components for Vue.js 2">
+              <p>For more information visit our website</p>
+              <b-btn variant="primary" href="https://bootstrap-vue.org/">More Info</b-btn>
+            </b-jumbotron>
+
+            <b-form-group
+              horizontal
+              :label-cols="4"
+              description="Let us know your name."
+              label="Enter your name"
+            >
+              <b-form-input v-model.trim="name"></b-form-input>
+            </b-form-group>
+
+            <b-alert variant="success" :show="showAlert">Hello {{ name }}</b-alert>
+          </b-container>
         </div>
 
       </b-col>
@@ -138,6 +80,18 @@ export default {
           iframe.src = doc.output("datauristring");
         }
       });
+    },
+    previewPdf2() {
+      let pdf = new jsPDF('p', 'pt', 'letter');
+		    pdf.html(document.getElementById('html'), {
+			    callback: function (pdf) {
+			let iframe = document.createElement('iframe');
+            iframe.setAttribute('style', 'position:absolute;right:0; top:0; bottom:0; height:100%; width:500px');
+            document.body.appendChild(iframe);
+            iframe.src = pdf.output('datauristring');
+          }
+		  });
+
     },
     clearPdf() {
         console.log("Clearing Preview");
