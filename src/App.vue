@@ -7,7 +7,16 @@
       <router-link class="mx-3" to="/PdfHtmlTEST1">HTML 1</router-link> 
       <router-link class="mx-3" to="/PdfHtmlTEST2">HTML 2</router-link> 
       <router-link class="mx-3" to="/PdfTable">Table</router-link>
-      <router-link class="mx-3" to="/Counter">Counter</router-link>
+        <b-dropdown id="dropdown-left" text="PRAC" variant="outline-primary" class="m-2">
+          <b-dropdown-item href="#">
+            <router-link class="mx-3" to="/Counter">Counter</router-link>
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <router-link class="mx-3" to="/Conditions">Conditions</router-link>
+          </b-dropdown-item>
+          <!-- <b-dropdown-item href="#">Something else here</b-dropdown-item> -->
+        </b-dropdown>
+    
     </div>
     </nav>
     <div class="my-5">
