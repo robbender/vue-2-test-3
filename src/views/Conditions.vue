@@ -24,7 +24,6 @@
             v-on:click="changeName(); showClearedAlert()" 
             v-if="show"
             ref="btnToggle">Hide</b-button>
-        </b-button>
      <div v-show="show">
          <br>
             <h4>This was hidden before. Click 'Hide' to remove.</h4>
