@@ -1,13 +1,13 @@
 <template>
     <div>
      <h3>Conditions TEST</h3>
-        <b-alert
+        <!-- <b-alert
         :show="dismissCountDown"
         dismissible
         variant="info"
         @dismissed="dismissCountDown=0"
         @dismiss-count-down="countDownChanged"
-        >Counter C L E A R E D !</b-alert>
+        >Counter C L E A R E D !</b-alert> -->
 
              <!-- This will switch buttons but not using bootstrap vue variants -->
      <!-- <b-button 
@@ -16,7 +16,7 @@
         ref="btnToggle">Show</b-button> -->
         <b-button
             variant="primary"
-            v-on:click="changeName" 
+            v-on:click=" changeName" 
             v-if="!show"
             ref="btnToggle">Show</b-button>
         <b-button
