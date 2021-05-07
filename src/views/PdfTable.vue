@@ -100,6 +100,9 @@ export default {
         location.reload();
         // this.iframe.src===null;
     },
+    countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
     genTable(){
       this.showAlert();
       const pdf = new jspdf();
