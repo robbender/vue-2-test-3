@@ -1,9 +1,6 @@
 <template>
     <div>
         <h3>Counter TEST</h3>
-            <!-- <b-alert show v-model="showClearedAlert" variant="info" dismissible>
-                Counter C L E A R E D !
-            </b-alert> -->
             <b-alert
                 :show="dismissCountDown"
                 dismissible
