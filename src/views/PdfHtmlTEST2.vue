@@ -39,7 +39,7 @@
               <b-form-input v-model.trim="name"></b-form-input>
             </b-form-group>
 
-            <b-alert variant="success" :show="showAlert">Hello {{ name }}</b-alert>
+            <!-- <b-alert variant="success" :show="showAlert">Hello {{ name }}</b-alert> -->
           </b-container>
         </div>
 
@@ -52,10 +52,12 @@
 import jspdf from "jspdf";
 export default {
   name: "PdfHtmlTest",
-  props: {},
+  props: {
+  },
   data: () => {
     return {
-       dismissSecs: 5,
+      name: '',
+      dismissSecs: 5,
       dismissCountDown: 0,
     };
   },
