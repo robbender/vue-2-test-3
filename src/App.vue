@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div id="nav" class="mx-auto">
       <router-link class="mx-3" to="/">Home</router-link> 
-       <b-dropdown id="dropdown-left" text="PDF FORM Examples" variant="outline-primary" class="m-2">
+       <b-dropdown id="dropdown-left" text="PDF FORM Examples" variant="outline-info" class="m-2">
           <b-dropdown-item href="#">
             <router-link class="mx-3" to="/PdfTEST">PDF Form Examples</router-link>
           </b-dropdown-item>
@@ -18,7 +18,7 @@
           </b-dropdown-item>
         </b-dropdown>
 
-        <b-dropdown id="dropdown-left" text="PRAC" variant="outline-primary" class="m-2">
+        <b-dropdown id="dropdown-left" text="PRAC" variant="outline-info" class="m-2">
           <b-dropdown-item href="#">
             <router-link class="mx-3" to="/Counter">Counter</router-link>
           </b-dropdown-item>
