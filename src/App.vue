@@ -14,6 +14,9 @@
           <b-dropdown-item href="#">
             <router-link class="mx-3" to="/Conditions">Conditions</router-link>
           </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <router-link class="mx-3" to="/Filters">Filters</router-link>
+          </b-dropdown-item>
           <!-- <b-dropdown-item href="#">Something else here</b-dropdown-item> -->
         </b-dropdown>
     
