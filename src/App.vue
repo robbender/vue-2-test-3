@@ -31,11 +31,14 @@
           <b-dropdown-item href="#">
             <router-link class="mx-3" to="/Filters">Filters</router-link>
           </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <router-link class="mx-3" to="/Links">Links</router-link>
+          </b-dropdown-item>
         </b-dropdown>
     
     </div>
     </nav>
-    <div class="my-5">
+    <div class="my-5"> 
       <router-view/>
     </div>
   </div>
