@@ -34,6 +34,9 @@
           <b-dropdown-item href="#">
             <router-link class="mx-3" to="/Links">Links</router-link>
           </b-dropdown-item>
+          <!-- <b-dropdown-item href="#">
+            <router-link class="mx-3" to="/Input">Input</router-link>
+          </b-dropdown-item> -->
         </b-dropdown>
     
     </div>
