@@ -2,6 +2,7 @@
     <div>
         <h3>Link TEST</h3>
             <h5>Messages from other Components</h5>
+        <app-input />
         <app-messages />
     </div>
 </template>
