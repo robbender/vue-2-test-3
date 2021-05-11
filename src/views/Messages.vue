@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mt-4">
         <h5>{{ title }}</h5>
         <div class="user" v-for="(user, id) in users" :key="id">
             <p>Name: <strong>{{ user.username }}</strong></p>

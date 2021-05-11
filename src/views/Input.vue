@@ -2,7 +2,7 @@
     <div>
         <hr>
         <h3>Input</h3>
-        <b-card 
+        <b-card
             body-bg-variant="dark">
              <b-form-input v-model="text" placeholder="Enter your text"></b-form-input>
         <div class="mt-2 text-light">Value: {{ text }}</div>
