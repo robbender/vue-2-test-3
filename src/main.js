@@ -5,13 +5,13 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './filters'
-import Messages from './views/Messages.vue'
-import Input from './views/Input.vue'
+// import Messages from './views/Messages.vue'
+// import Input from './views/Input.vue'
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
-Vue.component('app-messages', Messages)
-Vue.component('app-input', Input)
+// Vue.component('app-messages', Messages)
+// Vue.component('app-input', Input)
 
 
 new Vue({
