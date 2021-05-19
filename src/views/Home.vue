@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>PDF Homebase</h1>
+    <h1>PRAC Homebase</h1>
     <div>
       <p>The above links are examples of PDF generators from various inputs.</p>
       <br>
